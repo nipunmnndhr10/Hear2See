@@ -147,7 +147,7 @@
 // }
 
 import 'package:flutter/material.dart';
-import 'package:slf_teachable_model/screens/home_screen.dart';
+import 'package:slf_teachable_model/screens/main_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -163,7 +163,7 @@ class Hear2See extends StatelessWidget {
       title: 'AIDEA Sound Guard',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(brightness: Brightness.dark, useMaterial3: true),
-      home: const HomeScreen(),
+      home: const MainScreen(),
     );
   }
 }

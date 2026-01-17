@@ -3,7 +3,7 @@ import 'package:vibration/vibration.dart';
 import 'package:flutter/foundation.dart';
 
 class SoundService {
-  final double threshold = 0.3;
+  final double threshold = 0.4;
   final int sampleRate = 44100;
   final int bufferSize = 22016;
 
