@@ -36,6 +36,8 @@ dependencies:
   cupertino_icons: ^1.0.8
   tflite_audio: ^0.3.0
   vibration: ^3.1.5
+  sqflite: ^2.4.2
+  intl: ^0.20.2
 
 dev_dependencies:
   flutter_test:
@@ -87,6 +89,11 @@ flutter:
   #       - asset: fonts/TrajanPro.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter_18pt-Bold.ttf
+        - asset: assets/fonts/Inter_18pt-Light.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package

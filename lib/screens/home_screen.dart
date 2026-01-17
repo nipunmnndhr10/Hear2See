@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:slf_teachable_model/services/sound_service.dart';
+import 'package:slf_teachable_model/services/database_helper.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -132,8 +133,10 @@ class _HomeScreenState extends State<HomeScreen> {
     // Execute the full vibration pattern (this "awaits" the 5-13 seconds)
     if (type == "emergency") {
       await _soundService.triggerEmergencyVibration();
+      await DatabaseHelper().insertAlert(label, type);
     } else if (type == "horn") {
       await _soundService.triggerHornVibration();
+      await DatabaseHelper().insertAlert(label, type);
     }
 
     // Cooldown: After vibrations, keep it locked/alert for 2 more seconds if desired

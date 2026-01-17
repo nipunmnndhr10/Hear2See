@@ -162,7 +162,11 @@ class Hear2See extends StatelessWidget {
     return MaterialApp(
       title: 'AIDEA Sound Guard',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(brightness: Brightness.dark, useMaterial3: true),
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        useMaterial3: true,
+        fontFamily: 'Inter',
+      ),
       home: const MainScreen(),
     );
   }
