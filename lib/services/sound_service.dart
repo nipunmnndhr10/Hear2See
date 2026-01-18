@@ -47,17 +47,35 @@ class SoundService {
   Future<void> triggerEmergencyVibration() async {
     for (int i = 0; i < 3; i++) {
       if (!_shouldContinueVibrating) return; // Exit if stopped
-      Vibration.vibrate(duration: 3500, amplitude: 255);
+      Vibration.vibrate(duration: 3500, amplitude: 700);
       await Future.delayed(const Duration(milliseconds: 4500));
     }
   }
 
   // Pattern: 0.3s short burst, 1s gap, repeated 3 times
+  // Future<void> triggerHornVibration() async {
+  //   for (int i = 0; i < 3; i++) {
+  //     if (!_shouldContinueVibrating) return; // Exit if stopped
+  //     Vibration.vibrate(duration: 300, amplitude: 255);
+  //     await Future.delayed(const Duration(milliseconds: 1300));
+  //   }
+  // }
   Future<void> triggerHornVibration() async {
-    for (int i = 0; i < 3; i++) {
-      if (!_shouldContinueVibrating) return; // Exit if stopped
-      Vibration.vibrate(duration: 300, amplitude: 255);
-      await Future.delayed(const Duration(milliseconds: 1300));
+    // Loop for 4 "Sets"
+    for (int set = 0; set < 4; set++) {
+      if (!_shouldContinueVibrating) return;
+
+      // Inner loop: 3 "Super Fast" vibrations per set
+      for (int quick = 0; quick < 3; quick++) {
+        if (!_shouldContinueVibrating) return;
+
+        Vibration.vibrate(duration: 50, amplitude: 255); // Super short pulse
+        // 100ms gap between pulses within a set
+        await Future.delayed(const Duration(milliseconds: 150));
+      }
+
+      // 1 second gap between sets
+      await Future.delayed(const Duration(milliseconds: 1000));
     }
   }
 

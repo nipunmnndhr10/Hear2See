@@ -147,7 +147,7 @@
 // }
 
 import 'package:flutter/material.dart';
-import 'package:slf_teachable_model/screens/main_screen.dart';
+import 'package:slf_teachable_model/screens/splash_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -167,7 +167,7 @@ class Hear2See extends StatelessWidget {
         useMaterial3: true,
         fontFamily: 'Inter',
       ),
-      home: const MainScreen(),
+      home: const SplashScreen(),
     );
   }
 }

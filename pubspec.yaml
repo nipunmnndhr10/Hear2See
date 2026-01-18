@@ -66,6 +66,7 @@ flutter:
     - assets/soundclassifier2.tflite
     - assets/soundclassifier3.tflite
     - assets/labels.txt
+    - assets/images/Hear2See_logo.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
