@@ -47,7 +47,13 @@ class SoundService {
   Future<void> triggerEmergencyVibration() async {
     for (int i = 0; i < 3; i++) {
       if (!_shouldContinueVibrating) return; // Exit if stopped
-      Vibration.vibrate(duration: 3500, amplitude: 700);
+      // Amplitude must be 0-255.
+      // If the device supports custom vibrations, 255 is max intensity.
+      if (await Vibration.hasCustomVibrationsSupport() == true) {
+        Vibration.vibrate(duration: 3500, amplitude: 255);
+      } else {
+        Vibration.vibrate(duration: 3500);
+      }
       await Future.delayed(const Duration(milliseconds: 4500));
     }
   }
